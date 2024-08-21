@@ -18,7 +18,6 @@ using namespace std;
 
 int main()
 {
-    //cout << "Hello";
     Admin* admin = Admin::getInstance();
     Functions::OpenSystem();
     return 0;
