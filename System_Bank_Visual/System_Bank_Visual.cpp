@@ -18,8 +18,9 @@ using namespace std;
 
 int main()
 {
-    Admin* admin = Admin::getInstance();
-    Functions::OpenSystem();
+    cout << "Hello";
+    //Admin* admin = Admin::getInstance();
+   // Functions::OpenSystem();
     return 0;
 
 
