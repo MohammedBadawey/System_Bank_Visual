@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <exception>
 #include <vector>
 #include "Person.h"
 #include "Client.h"
@@ -10,11 +9,12 @@
 #include "Admin.h"
 #include "Validation.h"
 #include "Parser.h"
+
 using namespace std;
 
 class Functions
 {
-
+public:
     static vector <Client*> clientList;
     static vector <Employee*> employeeList;
     static vector <Admin*> adminList;
@@ -29,7 +29,7 @@ public:
     static void OpenSystem()
     {
 
-       // Parser::openData();
+        Parser::readClient();
         int choise;
         char op;
         cout << "\t\t\t\t\t Welcome to H2M bank\n";
@@ -77,7 +77,7 @@ public:
             Validation::ValidationData(name, password, acountTypeValue, "Client");
             Client* newClient = new Client(name, id, password, acountTypeValue);
             clientList.push_back(newClient);
-            //Parser::saveData(newClient);
+            Parser::saveClient(newClient);
             cout << "Client account created successfully.\n";
             newClient->Display();
 

@@ -8,6 +8,8 @@
 #include "Admin.h"
 #include "Validation.h"
 #include "Functions.h"
+#include "Parser.h"
+
 using namespace std;
 
 
