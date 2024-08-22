@@ -9,7 +9,6 @@
 #include "Employee.h"
 #include "Admin.h"
 #include "Validation.h"
-#include "Functions.h"
 
 
 using namespace std;
@@ -50,7 +49,6 @@ public:
 			int balance = stoi(myClient[3]);
 			Client* newClient = new Client(name, id, password, balance);
 			newClient->Display();
-			Functions::clientList.push_back(newClient);
 		};
 
 		
