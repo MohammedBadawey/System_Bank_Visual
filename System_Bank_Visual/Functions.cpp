@@ -1,5 +1,5 @@
 #include "Functions.h"
-vector <Client*>   Functions::clientList;
-vector <Employee*> Functions::employeeList;
-vector <Admin*>    Functions::adminList;
-int Functions::currentClientId = -1;
+vector <Employee*>  Functions::employeeList;
+vector  <Client*>   Functions::clientList;
+vector  <Admin*>    Functions::adminList;
+int    Functions::     currentClientId = -1;

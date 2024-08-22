@@ -9,20 +9,27 @@
 #include "Employee.h"
 #include "Admin.h"
 #include "Validation.h"
+#include "Parser.h"
 using namespace std;
 
 class Functions
 {
-private:
+
     static vector <Client*> clientList;
     static vector <Employee*> employeeList;
     static vector <Admin*> adminList;
     static int currentClientId;
 public:
 
+    static void list(Client* c) {
+        clientList.push_back(c);
+
+    }
+
     static void OpenSystem()
     {
 
+       // Parser::openData();
         int choise;
         char op;
         cout << "\t\t\t\t\t Welcome to H2M bank\n";
@@ -70,9 +77,13 @@ public:
             Validation::ValidationData(name, password, acountTypeValue, "Client");
             Client* newClient = new Client(name, id, password, acountTypeValue);
             clientList.push_back(newClient);
+            //Parser::saveData(newClient);
             cout << "Client account created successfully.\n";
             newClient->Display();
+
         }
+
+
         else if (accountType == "Employee") {
             id = Employee::getNewEmployeeId();
             Validation::ValidationData(name, password, acountTypeValue, "Employee");
@@ -84,6 +95,8 @@ public:
         else {
             cout << "Invalid account type.\n";
         }
+
+        
     }
 
 
