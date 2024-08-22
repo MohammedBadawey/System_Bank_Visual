@@ -361,3 +361,5 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/System_Bank_Visual
+System_Bank_Visual/Functions.h

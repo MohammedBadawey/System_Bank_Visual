@@ -7,8 +7,8 @@
 #include "Employee.h"
 #include "Admin.h"
 #include "Validation.h"
-#include "Functions.h"
 #include "Parser.h"
+#include "sysRun.h"
 
 using namespace std;
 
@@ -20,8 +20,9 @@ using namespace std;
 
 int main()
 {
-    Admin* admin = Admin::getInstance();
-    Functions::OpenSystem();
+    Admin* admin = Admin::getInstance(); 
+    sysRun::OpenSystem();
+
     return 0;
 
 
