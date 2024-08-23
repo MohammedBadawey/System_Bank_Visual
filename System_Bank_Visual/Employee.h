@@ -2,9 +2,10 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <exception>
+#include <vector>
 #include "Person.h"
 #include "Validation.h"
+#include "Client.h"
 using namespace std;
 
 class Employee : public Person
@@ -14,6 +15,7 @@ class Employee : public Person
 protected:
     double salary;
     static int newEmployeeId;
+    static vector<Client*> clientList;
 
     // con
 public:
@@ -48,5 +50,44 @@ public:
         Person::Display();
         cout << "Salary -> " << salary << endl;
     }
+
+    void addClient(Client& client) {
+        clientList.push_back(&client);
+    }
+
+    Client* searchClient(int id) {
+        for (Client* client : clientList) {
+            if (client->getId() == id) {
+                return client;
+            }
+        }
+        return nullptr;
+    }
+
+    void listClient() {
+        if (clientList.empty()) {
+            cout << "No clients available." << endl;
+            return;
+        }
+
+        for (Client* client : clientList) {
+            client->Display();
+            cout << "=============" << endl;
+        }
+    }
+
+    void editClient(int id, string name, string password, double balance) {
+        Client* client = searchClient(id);
+        if (client) {
+            client->setName(name);
+            client->setPassword(password);
+            client->setBalance(balance);
+            cout << "Client updated successfully." << endl;
+        }
+        else {
+            cout << "Client not found." << endl;
+        }
+    }
+
 };
 

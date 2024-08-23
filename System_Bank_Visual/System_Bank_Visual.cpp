@@ -8,7 +8,8 @@
 #include "Admin.h"
 #include "Validation.h"
 #include "Parser.h"
-#include "sysRun.h"
+#include "FilesHelper.h"
+#include "Screens.h"
 
 using namespace std;
 
@@ -21,9 +22,7 @@ using namespace std;
 int main()
 {
     Admin* admin = Admin::getInstance(); 
-    Parser::readClient();
-    sysRun::OpenSystem();
-
+    Screens::runApp();
     return 0;
 
 
