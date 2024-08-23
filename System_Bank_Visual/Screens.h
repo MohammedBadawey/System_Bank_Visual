@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include "ClientManager.h"
+#include "AdminManager.h"
+
 
 using namespace std;
 
@@ -59,8 +62,16 @@ public:
             cout << "Employee Login:\n";
             break;
         case 3:
-            cout << "Admin Login:\n";
+            { cout << "Admin Login:\n";
+            int id;
+            string password;
+            cout << "enter id\n";
+            cin >> id;
+            cout << "enter pass\n";
+            cin >> password;
+            AdminManager::login(id,password);
             break;
+        }
         default:
             cout << "Invalid option for login.\n";
             break;
