@@ -8,26 +8,26 @@ class Screens {
 public:
 
     static void bankName() {
-        cout << "*********************************\n";
-        cout << "*        Welcome to Mohammed Bank      *\n";
-        cout << "*********************************\n";
+        cout << "\t\t\t\t****************************************\n";
+        cout << "\t\t\t\t*            Mohammed Bank             *\n";
+        cout << "\t\t\t\t****************************************\n";
     }
 
     static void welcome() {
-        cout << "Welcome to Mohammed Bank!\n";
-        cout << "Please choose an option to proceed.\n";
+        cout << "\t\t\t\t\tWelcome to Mohammed Bank!\n";
+        cout << "\t\t\t\t   Please choose an option to proceed.\n";
     }
 
     static void loginOptions() {
-        cout << "1 - Login as Client\n";
-        cout << "2 - Login as Employee\n";
-        cout << "3 - Login as Admin\n";
-        cout << "4 - Exit\n";
+        cout << "\t\t\t\t\t1 - Login as Client\n";
+        cout << "\t\t\t\t\t2 - Login as Employee\n";
+        cout << "\t\t\t\t\t3 - Login as Admin\n";
+        cout << "\t\t\t\t\t4 - Exit\n";
     }
 
     static int loginAs() {
         int choice;
-        cout << "Enter your choice: ";
+        cout << "\t\t\t\t\tEnter your choice: ";
         cin >> choice;
         return choice;
     }
