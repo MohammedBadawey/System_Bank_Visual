@@ -363,3 +363,9 @@ MigrationBackup/
 FodyWeavers.xsd
 /System_Bank_Visual
 System_Bank_Visual/Functions.h
+*.obj
+*.obj
+*.ilk
+*.obj
+*.idb
+*.pdb
