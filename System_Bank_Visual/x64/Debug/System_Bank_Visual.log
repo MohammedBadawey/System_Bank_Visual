@@ -1,5 +1,4 @@
-﻿  Screens.cpp
-  System_Bank_Visual.cpp
+﻿  System_Bank_Visual.cpp
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'System_Bank_Visual.cpp')
   
@@ -9,5 +8,4 @@ D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(45,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   (compiling source file 'System_Bank_Visual.cpp')
   
-  Generating Code...
-LINK : fatal error LNK1168: cannot open D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\x64\Debug\System_Bank_Visual.exe for writing
+  System_Bank_Visual.vcxproj -> D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\x64\Debug\System_Bank_Visual.exe

@@ -8,9 +8,9 @@ class Screens {
 public:
 
     static void bankName() {
-        cout << "\t\t\t\t*********************************\n";
-        cout << "\t\t\t *        Welcome to Mohammed Bank      *\n";
-        cout << "\t\t\t\t*********************************\n";
+        cout << "*********************************\n";
+        cout << "*        Welcome to Mohammed Bank      *\n";
+        cout << "*********************************\n";
     }
 
     static void welcome() {
