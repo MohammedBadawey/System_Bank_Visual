@@ -1,3 +1,4 @@
+//Parser.h
 #pragma once
 #include <iostream>
 #include <string>
@@ -7,11 +8,9 @@
 
 using namespace std;
 
-
 class Parser
 {
 public:
-
 	static vector <Client*> clients;
 
 
@@ -72,7 +71,18 @@ public:
 
 		return Client(name, id, password, balance);
 	}
+	static void createClient() {
+		string name, password;
+		double balance;
+		int id = Client::getNewClientId();
 
+		Validation::ValidationData(name, password, balance, "Client");
+		Client* newClient = new Client(name, id, password, balance);
+		ClientManager::clientList.push_back(newClient);
+		saveClient(newClient);
+		cout << "Client account created successfully.\n";
+		newClient->Display();
+	}
 
 };
 
