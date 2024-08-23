@@ -21,6 +21,7 @@ using namespace std;
 int main()
 {
     Admin* admin = Admin::getInstance(); 
+    Parser::readClient();
     sysRun::OpenSystem();
 
     return 0;

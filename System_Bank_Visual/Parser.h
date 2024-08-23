@@ -1,10 +1,10 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include <cmath>
 #include <vector>
 #include <fstream>
-#include "Client.h"
+#include "ClientManager.h"
+
 using namespace std;
 
 
@@ -26,30 +26,53 @@ public:
 	}
 
 	static void readClient() {
-		ifstream ifS;
-		ifS.open("clientData.txt");
-		string line;
-		string myClient[4];
+		ifstream ifS("clientData.txt");
+		if (!ifS) {
+			cout << "Error opening clientData.txt for reading!" << endl;
+			return;
+		}
 
+		string line;
 		while (getline(ifS, line)) {
-			int pos = 0;
-			string split;
-			int index = 0;
-			while (pos != -1) {
-				pos = line.find("|");
-				split = line.substr(0, pos);
-				line = line.substr(pos + 1);
-				myClient[index] = split;
-				index++;
-			}
-			int id = stoi(myClient[0]);
-			string name = myClient[1];
-			string password = myClient[2];
-			int balance = stoi(myClient[3]);
-			Client* newClient = new Client(name, id, password, balance);
-			clients.push_back(newClient);
+			Client* client = new Client(parseToClient(line));
+			clients.push_back(client);
+			ClientManager::clientList.push_back(client);
 		}
 	}
+
+	static vector<string> split(const string& line) {
+		char delimiter = '|';
+		vector<string> tokens;
+		int start = 0;
+		int pos = line.find(delimiter);
+
+		while (pos != string::npos) {
+			string myCut = line.substr(start, pos - start);
+			tokens.push_back(myCut);
+			start = pos + 1;
+			pos = line.find(delimiter, start);
+		}
+		tokens.push_back(line.substr(start));
+
+
+		return tokens;
+	}
+
+	static Client parseToClient(const string& line) {
+		vector<string> parts = split(line);
+		if (parts.size() != 4) {
+			cout << "Incorrect data format";
+			return Client("", -1, "", 0);
+		}
+
+		int id = stoi(parts[0]);
+		string name = parts[1];
+		string password = parts[2];
+		int balance = stod(parts[3]);
+
+		return Client(name, id, password, balance);
+	}
+
 
 };
 
