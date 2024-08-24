@@ -2,8 +2,6 @@
 #include <iostream>
 #include <string>
 #include <cmath>
-#include <exception>
-#include <stdexcept>
 #include "Person.h"
 #include "Validation.h"
 using namespace std;
@@ -74,6 +72,14 @@ public:
     {
         Person::Display();
         cout << "balance-> " << balance << endl;
+    }
+
+    void login() {
+        cout << "Client " << name << " logged in." << endl;
+    }
+
+    void logout()  {
+        cout << "Client " << name << " logged out." << endl;
     }
 };
 

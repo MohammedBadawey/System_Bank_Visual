@@ -14,9 +14,9 @@ public:
     virtual void addEmployee(Employee* employee) = 0;
     virtual void addAdmin(Admin* admin) = 0;
 
-    virtual void getAllClients() const = 0;
-    virtual void getAllEmployees() const = 0;
-    virtual void getAllAdmins() const = 0;
+    virtual void getAllClients()  = 0;
+    virtual void getAllEmployees()  = 0;
+    virtual void getAllAdmins()  = 0;
 
     virtual void removeAllClients() = 0;
     virtual void removeAllEmployees() = 0;

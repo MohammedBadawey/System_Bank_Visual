@@ -1,8 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "ClientManager.h"
 #include "AdminManager.h"
+#include "EmployeeManager.h"
+#include "ClientManager.h"
 
 
 using namespace std;
@@ -54,49 +55,67 @@ public:
     }
 
     static void loginScreen(int c) {
+        int id;
+        string password;
+
+        cout << "Enter ID: ";
+        cin >> id;
+        cout << "Enter Password: ";
+        cin >> password;
+
         switch (c) {
-        case 1:
-            cout << "Client Login:\n";
+        case 1: {
+            Client* client = ClientManager::login(id, password);
+            if (client) {
+                cout << "Client logged in successfully.\n";
+            }
+            else {
+                cout << "Client login failed.\n";
+            }
             break;
-        case 2:
-            cout << "Employee Login:\n";
+        }
+        case 2: {
+            Employee* employee = EmployeeManager::login(id, password);
+            if (employee) {
+                cout << "Employee logged in successfully.\n";
+            }
+            else {
+                cout << "Employee login failed.\n";
+            }
             break;
-        case 3:
-            { cout << "Admin Login:\n";
-            int id;
-            string password;
-            cout << "enter id\n";
-            cin >> id;
-            cout << "enter pass\n";
-            cin >> password;
-            AdminManager::login(id,password);
+        }
+        case 3: {
+            Admin* admin = AdminManager::login(id, password);
+            if (admin) {
+                cout << "Admin logged in successfully.\n";
+            }
+            else {
+                cout << "Admin login failed.\n";
+            }
             break;
         }
         default:
-            cout << "Invalid option for login.\n";
+            cout << "Invalid option.\n";
             break;
         }
     }
 
     static void runApp() {
-        int choice;
         bankName();
         welcome();
 
-        do {
+        while (true) {
             loginOptions();
-            choice = loginAs();
+            int choice = loginAs();
+
             if (choice == 4) {
-                cout << "Exiting system... Goodbye!\n";
+                cout << "Exiting..." << endl;
                 break;
             }
-            if (choice >= 1 && choice <= 3) {
-                loginScreen(choice);
-            }
-            else {
-                invalid(2);
-            }
-        } while (true);
+
+            loginScreen(choice);
+            logout();
+        }
     }
 
 };

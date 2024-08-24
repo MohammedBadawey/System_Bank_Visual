@@ -108,5 +108,11 @@ public:
         }
     }
 
+    void login()  {
+        cout << "Admin " << name << " logged in." << endl;
+    }
 
+    void logout() {
+        cout << "Admin " << name << " logged out." << endl;
+    }
 };

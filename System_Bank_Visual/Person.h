@@ -61,5 +61,8 @@ public:
         cout << "Name -> " << name << endl;
         cout << "Id -> " << id << endl;
     }
+
+    virtual void login() = 0;
+    virtual void logout() = 0;
 };
 

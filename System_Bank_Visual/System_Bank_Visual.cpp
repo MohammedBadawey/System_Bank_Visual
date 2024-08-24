@@ -9,6 +9,7 @@
 #include "Validation.h"
 #include "Parser.h"
 #include "FilesHelper.h"
+#include "FileManager.h"
 #include "Screens.h"
 
 using namespace std;
@@ -22,6 +23,10 @@ using namespace std;
 int main()
 {
     Admin* admin = Admin::getInstance(); 
+    FileManager f;
+    f.getAllClients();
+    f.getAllEmployees();
+    f.removeAllAdmins();
     Screens::runApp();
     return 0;
 

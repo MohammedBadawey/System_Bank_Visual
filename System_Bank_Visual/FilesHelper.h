@@ -16,9 +16,7 @@ using namespace std;
 
 class FilesHelper {
 public:
-    static vector <Client*> clients;
-    static vector<Employee*> employees;
-    static vector<Admin*> admins;
+
 
     static void saveLast(const string& fileName, int id) {
         ofstream ofs(fileName);
@@ -50,6 +48,7 @@ public:
         else {
             cout << "Error opening clientData.txt for writing!" << endl;
         }
+        saveLast("lastClientId", c->getId());
     }
 
     static void saveEmployee(Employee* e) {
@@ -60,6 +59,7 @@ public:
         else {
             cout << "Error opening employeeData.txt for writing!" << endl;
         }
+        saveLast("lastEmployeeId", e->getId());
     }
 
     static void saveAdmin(Admin* a) {
@@ -70,6 +70,8 @@ public:
         else {
             cout << "Error opening adminData.txt for writing!" << endl;
         }
+        saveLast("lastAdminId", a->getId());
+
     }
 
     static void getClients() {
@@ -82,7 +84,6 @@ public:
         string line;
         while (getline(ifs, line)) {
             Client* c = new Client (Parser::parseToClient(line));
-            clients.push_back(c);
             ClientManager::clientList.push_back(c);
         }
     }
@@ -97,7 +98,6 @@ public:
         string line;
         while (getline(ifs, line)) {
             Employee* e = new Employee (Parser::parseToEmployee(line));
-            employees.push_back(e);
             EmployeeManager::employeeList.push_back(e);
         }
     }
@@ -112,7 +112,14 @@ public:
         string line;
         while (getline(ifs, line)) {
             Admin* admin = Admin::getInstance();
-            admin = Parser::parseToAdmin(line);
+            Admin tempAdmin = *Parser::parseToAdmin(line);
+
+
+            admin->setId(tempAdmin.getId());
+            admin->setName(tempAdmin.getName());
+            admin->setPassword(tempAdmin.getPassword());
+            admin->setSalary(tempAdmin.getSalary());
+
             AdminManager::adminList.push_back(admin);
         }
     }

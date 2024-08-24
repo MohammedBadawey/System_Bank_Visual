@@ -1,6 +1,7 @@
 #pragma once
 #include "DataSourceInterface.h"
 #include "FilesHelper.h"
+using namespace std;
 
 class FileManager : public DataSourceInterface {
 public:
@@ -12,23 +13,20 @@ public:
         FilesHelper::saveEmployee(employee);
     }
 
-    void addAdmin(Admin* admin) override {
+    void addAdmin(Admin* admin)  {
         FilesHelper::saveAdmin(admin);
     }
 
-    void getAllClients(std::vector<Client*>& clients)  {
+    void getAllClients() {
         FilesHelper::getClients();
-        clients = FilesHelper::clients;
     }
 
-    void getAllEmployees(std::vector<Employee*>& employees)  {
+    void getAllEmployees()  {
         FilesHelper::getEmployees();
-        employees = FilesHelper::employees;
     }
 
-    void getAllAdmins(std::vector<Admin*>& admins)  {
+    void getAllAdmins()  {
         FilesHelper::getAdmins();
-        admins = FilesHelper::admins;
     }
 
     void removeAllClients()  {
@@ -42,4 +40,5 @@ public:
     void removeAllAdmins()  {
         FilesHelper::clearFile("adminData.txt", "lastAdminId.txt");
     }
+
 };

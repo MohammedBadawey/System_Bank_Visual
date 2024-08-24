@@ -16,6 +16,8 @@ public:
     static int currentClientId;
 
 
+
+
     static void printClientMenu() {
         cout << "\t\t\t\t\t   :: Client Menu ::\n";
         cout << "\t\t\t\t\t 1 - Deposit amount\n";
@@ -28,9 +30,22 @@ public:
     }
 
     static void updatePassword(Person* person) {
-        string newPassword;
-        cout << "Enter new password: ";
-        cin >> newPassword;
+        string oldPassword, newPassword;
+
+        cout << "Enter your current password: ";
+        cin.ignore();
+        getline(cin, oldPassword);
+
+        if (person->getPassword() != oldPassword) {
+            cout << "Incorrect current password.\n";
+            return;
+        }
+
+        do {
+            cout << "Enter new password: ";
+            getline(cin, newPassword);
+        } while (!Validation::checkPassword(newPassword));
+
         person->setPassword(newPassword);
         cout << "Password updated successfully.\n";
     }
@@ -55,14 +70,16 @@ public:
         do {
             printClientMenu();
             cout << "\nEnter your choice: ";
-            cin >> choice;
+            while (!(cin >> choice) || choice < 1 || choice > 7) {
+                cout << "Invalid choice. Please enter a number between 1 and 7: ";
+            }
 
             switch (choice) {
             case 1:
-                cout << "Deposit functionality coming soon.\n";
+                depositClient(client);
                 break;
             case 2:
-                cout << "Withdraw functionality coming soon.\n";
+                withdrawClient(client);
                 break;
             case 3:
                 client->checkBalance();
@@ -79,27 +96,21 @@ public:
             case 7:
                 cout << "Exiting system... Goodbye!\n";
                 return false;
-            default:
-                cout << "Invalid choice, please try again.\n";
             }
 
-            do {
-                cout << "Press [Y] to Continue or [N] to Exit: ";
+            cout << "Press [Y] to Continue or [N] to Exit: ";
+            cin >> op;
+            op = toupper(op);
+            while (op != 'Y' && op != 'N') {
+                cout << "Invalid input. Please enter 'Y' or 'N': ";
                 cin >> op;
                 op = toupper(op);
-                if (op != 'Y' && op != 'N') {
-                    cout << "Invalid input. Please enter 'Y' or 'N'.\n";
-                }
-            } while (op != 'Y' && op != 'N');
-
-            if (op == 'N') {
-                cout << "Exiting system... Goodbye!\n";
-                return false;
             }
 
         } while (op == 'Y');
 
-        return true;
+        cout << "Exiting system... Goodbye!\n";
+        return false;
     }
 
     static void transferAmount(Client* sender) {
@@ -137,15 +148,15 @@ public:
     }
 
     static void deleteClient(int id) {
-        Client* client = searchClientById(id);
-        if (client) {
+        if (id > 0 && id <= ClientManager::clientList.size()) {
+            Client* client = ClientManager::clientList[id - 1];
             char confirmation;
             cout << "Are you sure you want to delete this account? (Y/N): ";
             cin >> confirmation;
             confirmation = toupper(confirmation);
             if (confirmation == 'Y') {
                 delete client;
-                clientList.erase(clientList.begin() + id - 1);
+                ClientManager::clientList.erase(ClientManager::clientList.begin() + id - 1);
                 cout << "Client deleted successfully.\n";
             }
             else {
@@ -170,5 +181,32 @@ public:
             cout << "--------------------------\n";
         }
     }
+
+    static void depositClient(Client* c) {
+        double amount;
+        cout << "Enter amount to deposit: ";
+        cin >> amount;
+        if (amount > 0) {
+            c->deposit(amount);
+            cout << "Amount deposited successfully. New balance: " << c->getBalance() << endl;
+        }
+        else {
+            cout << "Invalid deposit amount.\n";
+        }
+    }
+
+    static void withdrawClient(Client* c) {
+        double amount;
+        cout << "Enter amount to withdraw: ";
+        cin >> amount;
+        if (amount > 0 && c->getBalance() >= amount) {
+            c->withdraw(amount);
+            cout << "Amount withdrawn successfully. New balance: " << c->getBalance() << endl;
+        }
+        else {
+            cout << "Insufficient balance or invalid amount.\n";
+        }
+    }
+
 };
 
