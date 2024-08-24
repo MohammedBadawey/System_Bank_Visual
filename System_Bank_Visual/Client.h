@@ -73,11 +73,5 @@ public:
         Person::Display();
         cout << "balance-> " << balance << endl;
     }
-
-    void login() {
-        cout << "Client " << name << " logged in." << endl;
-    }
-
-    
 };
 

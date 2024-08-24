@@ -109,7 +109,6 @@ public:
         return false;
     }
 
-
     static void transferAmount() {
         int recipientId, attempts;
         double amount;
@@ -174,7 +173,6 @@ public:
             cout << "Transfer canceled.\n";
         }
     }
-
 
     static void depositClient() {
         Client* Depositor = searchClientById(currentClientId);

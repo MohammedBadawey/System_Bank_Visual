@@ -108,8 +108,4 @@ public:
         }
     }
 
-    void login()  {
-        cout << "Admin " << name << " logged in." << endl;
-    }
-
 };

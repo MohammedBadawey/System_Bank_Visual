@@ -3,8 +3,7 @@
 #include <vector>
 #include "Employee.h"
 #include "ClientManager.h"
-//#include "FileManager.h"
-
+#include "FilesHelper.h"
 using namespace std;
 
 
@@ -19,128 +18,14 @@ public:
         cout << "\t\t\t\t\t 2 - List all clients\n";
         cout << "\t\t\t\t\t 3 - Search for client\n";
         cout << "\t\t\t\t\t 4 - Edit client information\n";
-        cout << "\t\t\t\t\t 5 - Internal Transfer\n";
-        cout << "\t\t\t\t\t 6 - External Transfer\n";
-        cout << "\t\t\t\t\t 7 - Delete client\n";
-        cout << "\t\t\t\t\t 8 - Exit\n";
-    }
-
-    static void newClient(Employee* employee) {
-        string name, password;
-        double balance;
-        int id = Client::getNewClientId();
-
-        do {
-            cout << "Enter client name: ";
-            getline(cin, name);
-        } while (!Validation::checkName(name));
-
-        do {
-            cout << "Enter client password: ";
-            cin >> password;
-        } while (!Validation::checkPassword(password));
-
-        do {
-            cout << "Enter client balance: ";
-            cin >> balance;
-        } while (!Validation::checkBalance(balance));
-
-        Client* newClient = new Client(name, id, password, balance);
-        ClientManager::clientList.push_back(newClient);
-
-        cout << "Client account created successfully.\n";
-        newClient->Display();
-    }
-
-    static void listAllClients() {
-       //FileManager::getAllClients();
-    }
-
-    static void searchForClient(Employee* employee) {
-        int id;
-        cout << "Enter client ID: ";
-        cin >> id;
-
-        Client* client = ClientManager::searchClientById(id);
-        if (client) {
-            client->Display();
-        }
-        else {
-            cout << "Client with ID " << id << " not found.\n";
-        }
-    }
-
-    static void editClientInfo(Employee* employee) {
-        int id;
-        int choice;
-        string name, password;
-        double balance;
-
-        cout << "Enter client ID to edit: ";
-        cin >> id;
-
-        Client* client = ClientManager::searchClientById(id);
-        if (client) {
-            cout << "Select the information to edit:\n";
-            cout << "1 - Name\n";
-            cout << "2 - Password\n";
-            cout << "3 - Balance\n";
-            cout << "4 - Edit All\n";
-            cout << "Enter your choice: ";
-            cin >> choice;
-
-            switch (choice) {
-            case 1:
-                cout << "Enter new name: ";
-                cin.ignore();
-                getline(cin, name);
-                client->setName(name);
-                cout << "Name updated successfully.\n";
-                break;
-            case 2:
-                cout << "Enter new password: ";
-                cin >> password;
-                client->setPassword(password);
-                cout << "Password updated successfully.\n";
-                break;
-            case 3:
-                cout << "Enter new balance: ";
-                cin >> balance;
-                client->setBalance(balance);
-                cout << "Balance updated successfully.\n";
-                break;
-            case 4:
-                cout << "Enter new name: ";
-                cin.ignore();
-                getline(cin, name);
-                client->setName(name);
-
-                cout << "Enter new password: ";
-                cin >> password;
-                client->setPassword(password);
-
-                cout << "Enter new balance: ";
-                cin >> balance;
-                client->setBalance(balance);
-
-                cout << "All information updated successfully.\n";
-                break;
-            default:
-                cout << "Invalid choice. No changes made.\n";
-                return;
-            }
-
-            client->Display();
-        }
-        else {
-            cout << "Client with ID " << id << " not found.\n";
-        }
+        cout << "\t\t\t\t\t 5 - Exit\n";
     }
 
     static Employee* login(int id, string password) {
         if (id > 0 && id <= employeeList.size()) {
             Employee* employee = employeeList[id - 1];
-            if (employee->getPassword() == password) {
+            if (employee->getPassword() == password)
+            {
                 return employee;
             }
             else {
@@ -163,24 +48,66 @@ public:
             cin >> choice;
 
             switch (choice) {
-            case 1:
-                newClient(employee);
+            case 1: {
+                string name, password;
+                double balance;
+                int id;
+                cout << "Enter client name: ";
+                cin >> name;
+                cout << "Enter client ID: ";
+                cin >> id;
+                cout << "Enter client password: ";
+                cin >> password;
+                cout << "Enter client balance: ";
+                cin >> balance;
+                Client* client = new Client(name, id, password, balance);
+                employee->addClient(*client);
+                cout << "Client added successfully.\n";
+                delete client;
                 break;
-            case 2:
-                listAllClients();
+            }
+
+            case 2:{
+                employee->listClient();
                 break;
-            case 3:
-                searchForClient(employee);
+            }
+            
+            case 3: {
+                int id;
+                cout << "Enter client ID to search: ";
+                cin >> id;
+                Client* client = employee->searchClient(id);
+                if (client) {
+                    client->Display();
+                }
+                else {
+                    cout << "Client not found.\n";
+                }
                 break;
-            case 4:
-                editClientInfo(employee);
+            }
+            
+            case 4: {
+                int id;
+                string name, password;
+                double balance;
+                cout << "Enter client ID to edit: ";
+                cin >> id;
+                cout << "Enter new client name: ";
+                cin >> name;
+                cout << "Enter new client password: ";
+                cin >> password;
+                cout << "Enter new balance: ";
+                cin >> balance;
+                employee->editClient(id, name, password, balance);
                 break;
-            case 5:
-                externalTransfer();
-                break;
-            case 6:
+
+            }
+                
+            case 5: {
                 cout << "Exiting system... Goodbye!\n";
                 return false;
+            }
+
             default:
                 cout << "Invalid choice, please try again.\n";
             }
@@ -203,48 +130,4 @@ public:
 
         return true;
     }
-
-    static void externalTransfer() {
-        string externalName;
-        double amount;
-        int recipientId;
-
-        cout << "Enter external sender's name: ";
-        cin.ignore(); 
-        getline(cin, externalName);
-
-        cout << "Enter amount to transfer: ";
-        cin >> amount;
-        if (amount <= 0) {
-            cout << "Invalid amount. Amount must be greater than zero.\n";
-            return;
-        }
-
-        cout << "Enter recipient ID: ";
-        cin >> recipientId;
-
-        Client* recipient = ClientManager::searchClientById(recipientId);
-        if (!recipient) {
-            cout << "Recipient not found.\n";
-            return;
-        }
-
-        Client externalSender(externalName, 0, "", 0);
-
-        if (amount > 0) {
-            recipient->deposit(amount);
-            cout << "Transfer completed successfully.\n";
-            cout << "Transfer from " << externalName << " to " << recipient->getName() << " of amount " << amount << endl;
-        }
-        else {
-            cout << "Failed to transfer. Amount must be greater than zero.\n";
-        }
-    }
-
- 
-
-
-
-
-
 };

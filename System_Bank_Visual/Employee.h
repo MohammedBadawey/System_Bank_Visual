@@ -88,10 +88,5 @@ public:
             cout << "Client not found." << endl;
         }
     }
-
-    void login()  {
-        cout << "Employee " << name << " logged in." << endl;
-    }
-
 };
 
