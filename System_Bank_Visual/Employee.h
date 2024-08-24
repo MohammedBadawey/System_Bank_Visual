@@ -93,9 +93,5 @@ public:
         cout << "Employee " << name << " logged in." << endl;
     }
 
-    void logout() {
-        cout << "Employee " << name << " logged out." << endl;
-    }
-
 };
 

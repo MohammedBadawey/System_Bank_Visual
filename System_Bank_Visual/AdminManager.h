@@ -35,6 +35,10 @@ public:
         cout << "\t\t\t\t\t 15 - Exit\n";
     }
 
+    static void printEmployeeMenu() {
+        EmployeeManager::printEmployeeMenu();
+    }
+
     static Admin* login(int id, string password) {
         Admin* admin = Admin::getInstance();
         if (admin->getPassword() == password) {
@@ -56,49 +60,33 @@ public:
 
             switch (choice) {
             case 1:
-                addEmployee();
+                //addEmployee();
                 break;
             case 2:
-                editEmployeeInfo();
+                //editEmployeeInfo();
                 break;
             case 3:
                 EmployeeManager::newClient(nullptr);
                 break;
             case 4:
-                editClientInfo();
+               // editClientInfo();
                 break;
             case 5:
-                searchForClient();
+                //searchForClient();
                 break;
             case 6:
-
-                EmployeeManager::depositToClient();
-                break;
-            case 7:
-                EmployeeManager::withdrawFromClient();
-                break;
-            case 8:
-                EmployeeManager::internalTransfer();
-                break;
-            case 9:
                 EmployeeManager::externalTransfer();
                 break;
+            case 7:
+              //  ClientManager::listAllClients(nullptr);
+                break;
+            case 8:
+                //listAllEmployees();
+                break;
+            case 9:
+              //  listAllAdmins();
+                break;
             case 10:
-                ClientManager::listAllClients(nullptr);
-                break;
-            case 11:
-                listAllEmployees();
-                break;
-            case 12:
-                listAllAdmins();
-                break;
-            case 13:
-                deleteClient();
-                break;
-            case 14:
-                deleteEmployee();
-                break;
-            case 15:
                 cout << "Exiting system... Goodbye!\n";
                 return false;
             default:
@@ -124,134 +112,13 @@ public:
         return true;
     }
 
-    static void addEmployee() {
-        string name, password;
-        int salary;
-        cout << "Enter new employee name: ";
-        cin.ignore();
-        getline(cin, name);
-
-        cout << "Enter new employee password: ";
-        cin >> password;
-
-        cout << "Enter new employee salary: ";
-        cin >> salary;
-
-        int id = Employee::getNewEmployeeId();
-        Employee* newEmployee = new Employee (name, id, password,salary);
-        EmployeeManager::employeeList.push_back(newEmployee);
-
-        cout << "Employee added successfully.\n";
-        newEmployee->Display();
-        newEmployee->getPassword();
-    }
-
-    static void editEmployeeInfo() {
-        int id;
-        string name, password;
-
-        cout << "Enter employee ID to edit: ";
-        cin >> id;
-
-        if (id > 0 && id <= EmployeeManager::employeeList.size()) {
-            Employee* employee = EmployeeManager::employeeList[id - 1];
-
-            cout << "Enter new name: ";
-            cin.ignore();
-            getline(cin, name);
-            cout << "Enter new password: ";
-            cin >> password;
-
-            employee->setName(name);
-            employee->setPassword(password);
-
-            cout << "Employee information updated successfully.\n";
-            employee->Display();
-        }
-        else {
-            cout << "Employee with ID " << id << " not found.\n";
-        }
-    }
 
 
 
-    static void editClientInfo() {
-        int id;
-        string name, password;
-        double balance;
 
-        cout << "Enter client ID to edit: ";
-        cin >> id;
 
-        Client* client = ClientManager::searchClientById(id);
-        if (client) {
-            cout << "Enter new name: ";
-            cin.ignore();
-            getline(cin, name);
-            cout << "Enter new password: ";
-            cin >> password;
-            cout << "Enter new balance: ";
-            cin >> balance;
 
-            client->setName(name);
-            client->setPassword(password);
-            client->setBalance(balance);
 
-            cout << "Client information updated successfully.\n";
-            client->Display();
-        }
-        else {
-            cout << "Client with ID " << id << " not found.\n";
-        }
-    }
-
-    static void searchForClient() {
-        int id;
-        cout << "Enter client ID to search: ";
-        cin >> id;
-
-        Client* client = ClientManager::searchClientById(id);
-        if (client) {
-            client->Display();
-        }
-        else {
-            cout << "Client with ID " << id << " not found.\n";
-        }
-    }
-
-    static void listAllEmployees() {
-        EmployeeManager::listAllEmployees(nullptr);
-    }
-
-    static void listAllClients() {
-        ClientManager::listAllClients(nullptr);
-    }
-
-    static void listAllAdmins(Employee* employee = nullptr) {
-        if (adminList.empty()) {
-            cout << "No Admins found.\n";
-            return;
-        }
-
-        cout << "\nList of all Admins:\n";
-        for (int i = 0; i < adminList.size(); ++i) {
-            cout << "Admin " << i + 1 << ":\n";
-            adminList[i]->Display();
-            cout << "--------------------------\n";
-        }
-    }
-
-    static void deleteClient() {
-        int id;
-        cout << "Enter the Client ID to delete: ";
-        cin >> id;
-        ClientManager::deleteClient(id);
-    }
-
-    static void deleteEmployee() {
-
-        EmployeeManager::deleteEmployee();
-    }
 
 
 };

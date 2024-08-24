@@ -1,4 +1,17 @@
-﻿  FileManager.cpp
+﻿  Admin.cpp
+  AdminManager.cpp
+  ClientManager.cpp
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'ClientManager.cpp')
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(27,19): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'ClientManager.cpp')
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(45,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'ClientManager.cpp')
+  
+  DataSourceInterface.cpp
+  FileManager.cpp
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'FileManager.cpp')
   
@@ -18,6 +31,17 @@ D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(45,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   (compiling source file 'FilesHelper.cpp')
   
+  Parser.cpp
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Parser.cpp')
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(27,19): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Parser.cpp')
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(45,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Parser.cpp')
+  
+  Screens.cpp
   System_Bank_Visual.cpp
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'System_Bank_Visual.cpp')

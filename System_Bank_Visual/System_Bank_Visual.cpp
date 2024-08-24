@@ -26,7 +26,7 @@ int main()
     FileManager f;
     f.getAllClients();
     f.getAllEmployees();
-    f.removeAllAdmins();
+    f.getAllAdmins();
     Screens::runApp();
     return 0;
 

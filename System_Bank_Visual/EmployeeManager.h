@@ -3,10 +3,11 @@
 #include <vector>
 #include "Employee.h"
 #include "ClientManager.h"
-#include "Parser.h"
-#include "Validation.h"
+//#include "FileManager.h"
 
 using namespace std;
+
+
 
 class EmployeeManager {
 public:
@@ -52,7 +53,7 @@ public:
     }
 
     static void listAllClients() {
-        ClientManager::listAllClients(nullptr);
+       //FileManager::getAllClients();
     }
 
     static void searchForClient(Employee* employee) {
@@ -136,27 +137,6 @@ public:
         }
     }
 
-    static void updatePassword(Person* person) {
-        string oldPassword, newPassword;
-
-        cout << "Enter your current password: ";
-        cin >> oldPassword;
-
-        if (person->getPassword() != oldPassword) {
-            cout << "Incorrect current password.\n";
-            return;
-        }
-
-        do {
-            cout << "Enter new password: ";
-            cin.ignore();
-            getline(cin, newPassword);
-        } while (!Validation::checkPassword(newPassword));
-
-        person->setPassword(newPassword);
-        cout << "Password updated successfully.\n";
-    }
-
     static Employee* login(int id, string password) {
         if (id > 0 && id <= employeeList.size()) {
             Employee* employee = employeeList[id - 1];
@@ -196,15 +176,9 @@ public:
                 editClientInfo(employee);
                 break;
             case 5:
-                internalTransfer();
-                break;
-            case 6:
                 externalTransfer();
                 break;
-            case 7:
-                deleteClient(employee);
-                break;
-            case 8:
+            case 6:
                 cout << "Exiting system... Goodbye!\n";
                 return false;
             default:
@@ -228,77 +202,6 @@ public:
         } while (op == 'Y');
 
         return true;
-    }
-
-    static void listAllEmployees(Employee* employee = nullptr) {
-        if (employeeList.empty()) {
-            cout << "No Employees found.\n";
-            return;
-        }
-
-        cout << "\nList of all Employees:\n";
-        for (int i = 0; i < employeeList.size(); ++i) {
-            cout << "Employees " << i + 1 << ":\n";
-            employeeList[i]->Display();
-            cout << "--------------------------\n";
-        }
-    }
-
-    static void depositToClient() {
-        int amount,clientId;
-        cout << "enter client Id\n";
-        cin >> clientId;
-        cout << "enter amount\n";
-        cin >> amount;
-        Client* client = ClientManager::searchClientById(clientId);
-        if (client) {
-            if (amount > 0) {
-                client->deposit(amount);
-                cout << "Amount deposited successfully. New balance: " << client->getBalance() << endl;
-            }
-            else {
-                cout << "Invalid deposit amount.\n";
-            }
-        }
-        else {
-            cout << "Client with ID " << clientId << " not found.\n";
-        }
-    }
-
-    static void withdrawFromClient() {
-        int amount, clientId;
-        cout << "enter client Id\n";
-        cin >> clientId;
-        cout << "enter amount\n";
-        cin >> amount;
-        Client* client = ClientManager::searchClientById(clientId);
-        if (client) {
-            if (amount > 0 && client->getBalance() >= amount) {
-                client->withdraw(amount);
-                cout << "Amount withdrawn successfully. New balance: " << client->getBalance() << endl;
-            }
-            else {
-                cout << "Insufficient balance or invalid amount.\n";
-            }
-        }
-        else {
-            cout << "Client with ID " << clientId << " not found.\n";
-        }
-    }
-
-
-    static void internalTransfer() {
-        int senderId;
-        cout << "Enter sender ID: ";
-        cin >> senderId;
-
-        Client* sender = ClientManager::searchClientById(senderId);
-        if (!sender) {
-            cout << "Sender not found.\n";
-            return;
-        }
-
-        ClientManager::transferAmount(sender);
     }
 
     static void externalTransfer() {
@@ -338,39 +241,9 @@ public:
         }
     }
 
-    static void deleteEmployee() {
-        int id;
-        cout << "Enter the Employee ID to delete: ";
-        cin >> id;
+ 
 
-        if (id > 0 && id <= employeeList.size()) {
-            Employee* employeeToDelete = employeeList[id - 1];
-            employeeToDelete->Display();
-            char confirmation;
-            cout << "Are you sure you want to delete this employee? (Y/N): ";
-            cin >> confirmation;
-            confirmation = toupper(confirmation);
 
-            if (confirmation == 'Y') {
-                employeeList.erase(employeeList.begin() + (id - 1));
-                delete employeeToDelete;
-                cout << "Employee deleted successfully.\n";
-            }
-            else {
-                cout << "Employee deletion cancelled.\n";
-            }
-        }
-        else {
-            cout << "Invalid Employee ID.\n";
-        }
-    }
-
-    static void deleteClient(Employee* employee) {
-        int id;
-        cout << "Enter the Client ID to delete: ";
-        cin >> id;
-        ClientManager::deleteClient(id);
-    }
 
 
 

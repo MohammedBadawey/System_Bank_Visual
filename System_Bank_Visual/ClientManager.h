@@ -25,8 +25,7 @@ public:
         cout << "\t\t\t\t\t 3 - Show balance\n";
         cout << "\t\t\t\t\t 4 - Transfer\n";
         cout << "\t\t\t\t\t 5 - Account information\n";
-        cout << "\t\t\t\t\t 6 - Delete account\n";
-        cout << "\t\t\t\t\t 7 - Exit\n";
+        cout << "\t\t\t\t\t 6 - Exit\n";
     }
 
     static void updatePassword(Person* person) {
@@ -76,23 +75,20 @@ public:
 
             switch (choice) {
             case 1:
-                depositClient(client);
+                depositClient();
                 break;
             case 2:
-                withdrawClient(client);
+                withdrawClient();
                 break;
             case 3:
                 client->checkBalance();
                 break;
             case 4:
-                transferAmount(client);
+                transferAmount();
                 break;
             case 5:
                 client->Display();
                 break;
-            case 6:
-                deleteClient(client->getId());
-                return false;
             case 7:
                 cout << "Exiting system... Goodbye!\n";
                 return false;
@@ -113,27 +109,98 @@ public:
         return false;
     }
 
-    static void transferAmount(Client* sender) {
-        int recipientId;
-        double amount;
-        cout << "Enter recipient ID: ";
-        cin >> recipientId;
 
-        Client* recipient = searchClientById(recipientId);
-        if (recipient && recipientId != sender->getId()) {
-            cout << "Enter amount to transfer: ";
-            cin >> amount;
-            if (amount > 0 && sender->getBalance() >= amount) {
-                sender->transferTo(amount, *recipient);
-                cout << "Transfer completed successfully.\n";
-                cout << "Your new balance is: " << sender->getBalance() << endl;
+    static void transferAmount() {
+        int recipientId, attempts;
+        double amount;
+        attempts = 0;
+        bool validRecipient = false;
+
+        do {
+            cout << "Enter recipient id\n";
+            cin >> recipientId;
+            attempts++;
+
+            if (recipientId == currentClientId) {
+                cout << "Cannot transfer to yourself. Transfer canceled.\n";
             }
             else {
-                cout << "Insufficient balance or invalid amount.\n";
+                Client* recipient = searchClientById(recipientId);
+                if (recipient) {
+                    cout << "Client found by name: " << recipient->getName() << endl;
+                    validRecipient = true;
+                    break;
+                }
+                else {
+                    cout << "Recipient not found. Please try again.\n";
+                }
+            }
+        } while (attempts < 3 && !validRecipient);
+
+        if (!validRecipient) {
+            cout << "Failed to enter a valid recipient. Transfer canceled.\n";
+            return;
+        }
+
+        char confirm;
+        do {
+            cout << "Do you want to proceed with the transfer? (y/n): ";
+            cin >> confirm;
+            confirm = toupper(confirm);
+            if (confirm != 'Y' && confirm != 'N') {
+                cout << "Invalid input. Please enter 'Y' or 'N'.\n";
+            }
+        } while (confirm != 'Y' && confirm != 'N');
+
+        if (confirm == 'Y') {
+            Client* sender = searchClientById(currentClientId);
+            cout << "Enter amount: ";
+            cin >> amount;
+            if (amount > 0) {
+                if (sender->getBalance() >= amount) {
+                    sender->transferTo(amount, *searchClientById(recipientId));
+                    cout << "Transfer completed successfully.\n";
+                    cout << "Your balance Now is -> " << sender->getBalance() << endl;
+                }
+                else {
+                    cout << "Insufficient balance. Transfer canceled.\n";
+                }
+            }
+            else {
+                cout << "Invalid amount entered. Transfer canceled.\n";
             }
         }
         else {
-            cout << "Recipient not found or invalid transfer.\n";
+            cout << "Transfer canceled.\n";
+        }
+    }
+
+
+    static void depositClient() {
+        Client* Depositor = searchClientById(currentClientId);
+        double amount;
+        cout << "Enter amount to deposit: ";
+        cin >> amount;
+        if (amount > 0) {
+            Depositor->deposit(amount);
+            cout << "Amount deposited successfully. New balance: " << Depositor->getBalance() << endl;
+        }
+        else {
+            cout << "Invalid deposit amount.\n";
+        }
+    }
+
+    static void withdrawClient() {
+        Client* withdrawer = searchClientById(currentClientId);
+        double amount;
+        cout << "Enter amount to withdraw: ";
+        cin >> amount;
+        if (amount > 0 && withdrawer->getBalance() >= amount) {
+            withdrawer->withdraw(amount);
+            cout << "Amount withdrawn successfully. New balance: " << withdrawer->getBalance() << endl;
+        }
+        else {
+            cout << "Insufficient balance or invalid amount.\n";
         }
     }
 
@@ -146,67 +213,5 @@ public:
             return nullptr;
         }
     }
-
-    static void deleteClient(int id) {
-        if (id > 0 && id <= ClientManager::clientList.size()) {
-            Client* client = ClientManager::clientList[id - 1];
-            char confirmation;
-            cout << "Are you sure you want to delete this account? (Y/N): ";
-            cin >> confirmation;
-            confirmation = toupper(confirmation);
-            if (confirmation == 'Y') {
-                delete client;
-                ClientManager::clientList.erase(ClientManager::clientList.begin() + id - 1);
-                cout << "Client deleted successfully.\n";
-            }
-            else {
-                cout << "Client deletion cancelled.\n";
-            }
-        }
-        else {
-            cout << "Invalid client ID.\n";
-        }
-    }
-
-    static void listAllClients(Employee* employee = nullptr) {
-        if (clientList.empty()) {
-            cout << "No clients found.\n";
-            return;
-        }
-
-        cout << "\nList of all clients:\n";
-        for (int i = 0; i < clientList.size(); ++i) {
-            cout << "Client " << i + 1 << ":\n";
-            clientList[i]->Display();
-            cout << "--------------------------\n";
-        }
-    }
-
-    static void depositClient(Client* c) {
-        double amount;
-        cout << "Enter amount to deposit: ";
-        cin >> amount;
-        if (amount > 0) {
-            c->deposit(amount);
-            cout << "Amount deposited successfully. New balance: " << c->getBalance() << endl;
-        }
-        else {
-            cout << "Invalid deposit amount.\n";
-        }
-    }
-
-    static void withdrawClient(Client* c) {
-        double amount;
-        cout << "Enter amount to withdraw: ";
-        cin >> amount;
-        if (amount > 0 && c->getBalance() >= amount) {
-            c->withdraw(amount);
-            cout << "Amount withdrawn successfully. New balance: " << c->getBalance() << endl;
-        }
-        else {
-            cout << "Insufficient balance or invalid amount.\n";
-        }
-    }
-
 };
 

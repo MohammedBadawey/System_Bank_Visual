@@ -78,8 +78,6 @@ public:
         cout << "Client " << name << " logged in." << endl;
     }
 
-    void logout()  {
-        cout << "Client " << name << " logged out." << endl;
-    }
+    
 };
 
