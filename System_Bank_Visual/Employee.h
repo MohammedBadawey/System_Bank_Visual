@@ -15,7 +15,7 @@ class Employee : public Person
 protected:
     double salary;
     static int newEmployeeId;
-    static vector<Client*> clientList;
+    static vector<Client> clientList;
 
     // con
 public:
@@ -24,7 +24,7 @@ public:
         salary = 0.0;
         id = newEmployeeId++;
     }
-    Employee(string name, int id, string password, double salary) :Person(name, id, password)
+    Employee(string name, int id, string password, double salary) :Person(name, newEmployeeId++, password)
     {
         setSalary(salary);
 
@@ -37,12 +37,15 @@ public:
         }
         this->salary = salary;
     }
+    
     // getter
     double getSalary()
     {
         return salary;
     }
-    static int getNewEmployeeId() { return newEmployeeId; }
+
+    static int getNewEmployeeId() {
+        return newEmployeeId; }
 
     // methods
     const void Display()

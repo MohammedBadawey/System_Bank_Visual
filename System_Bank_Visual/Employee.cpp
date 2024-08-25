@@ -1,3 +1,3 @@
 #include "Employee.h"
-int Employee::newEmployeeId = 1;
+int Employee::newEmployeeId = 0;
 vector<Client*> Employee::clientList;

@@ -72,7 +72,8 @@ public:
             else {
                 cout << "Client login failed.\n";
             }
-            break;
+        
+             break;
         }
         case 2: {
             Employee* employee = EmployeeManager::login(id, password);
@@ -104,17 +105,20 @@ public:
         bankName();
         welcome();
 
-        while (true) {
+        bool running = true;
+
+        while (running) {
             loginOptions();
             int choice = loginAs();
 
             if (choice == 4) {
                 cout << "Exiting..." << endl;
-                break;
+                running = false;
             }
-
-            loginScreen(choice);
-            logout();
+            else {
+                loginScreen(choice);
+                logout();
+            }
         }
     }
 

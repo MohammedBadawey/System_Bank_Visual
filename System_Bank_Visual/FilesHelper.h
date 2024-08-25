@@ -22,6 +22,7 @@ public:
         ofstream ofs(fileName);
         if (ofs.is_open()) {
             ofs << id << endl;
+            ofs.close();
         }
         else {
             cout << "Error opening " << fileName << " for writing!" << endl;
@@ -44,11 +45,14 @@ public:
         ofstream ofS("clientData.txt", ios::app);
         if (ofS.is_open()) {
             ofS << c->getId() << "|" << c->getName() << "|" << c->getPassword() << "|" << c->getBalance() << endl;
+            ofS.close();
+            int i = c->getId();
+            saveLast("lastClientId.txt",i );
         }
         else {
             cout << "Error opening clientData.txt for writing!" << endl;
         }
-        saveLast("lastClientId", c->getId());
+
     }
 
     static void saveEmployee(Employee* e) {
@@ -59,7 +63,7 @@ public:
         else {
             cout << "Error opening employeeData.txt for writing!" << endl;
         }
-        saveLast("lastEmployeeId", e->getId());
+        saveLast("lastEmployeeId.txt", e->getId());
     }
 
     static void saveAdmin(Admin* a) {
@@ -70,7 +74,7 @@ public:
         else {
             cout << "Error opening adminData.txt for writing!" << endl;
         }
-        saveLast("lastAdminId", a->getId());
+        saveLast("lastAdminId.txt", a->getId());
 
     }
 

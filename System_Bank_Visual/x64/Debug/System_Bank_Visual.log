@@ -1,45 +1,712 @@
-﻿  AdminManager.cpp
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  Admin.cpp
+  AdminManager.cpp
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
+  (compiling source file 'Admin.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
+  (compiling source file 'Admin.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
+  (compiling source file 'Admin.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
   (compiling source file 'AdminManager.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
+  (compiling source file 'AdminManager.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
+  (compiling source file 'AdminManager.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+  ClientManager.cpp
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
+  (compiling source file 'ClientManager.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
+  (compiling source file 'ClientManager.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
+  (compiling source file 'ClientManager.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'ClientManager.cpp')
   
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(27,19): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
-  (compiling source file 'AdminManager.cpp')
+  (compiling source file 'ClientManager.cpp')
   
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(45,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-  (compiling source file 'AdminManager.cpp')
+  (compiling source file 'ClientManager.cpp')
   
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\FilesHelper.h(101,13): error C2653: 'EmployeeManager': is not a class or namespace name
-  (compiling source file 'AdminManager.cpp')
+  DataSourceInterface.cpp
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
+  (compiling source file 'DataSourceInterface.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
   
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\FilesHelper.h(101,30): error C2065: 'employeeList': undeclared identifier
-  (compiling source file 'AdminManager.cpp')
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
+  (compiling source file 'DataSourceInterface.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\FilesHelper.h(123,13): error C2653: 'AdminManager': is not a class or namespace name
-  (compiling source file 'AdminManager.cpp')
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
+  (compiling source file 'DataSourceInterface.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\FilesHelper.h(123,27): error C2065: 'adminList': undeclared identifier
-  (compiling source file 'AdminManager.cpp')
+  Employee.cpp
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
+  (compiling source file 'Employee.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
+  (compiling source file 'Employee.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
+  (compiling source file 'Employee.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   
   EmployeeManager.cpp
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
   (compiling source file 'EmployeeManager.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
   
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(27,19): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
   (compiling source file 'EmployeeManager.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(45,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
   (compiling source file 'EmployeeManager.cpp')
-  
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\AdminManager.h(31,9): error C2653: 'EmployeeManager': is not a class or namespace name
-  (compiling source file 'EmployeeManager.cpp')
-  
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\FilesHelper.h(101,13): error C2653: 'EmployeeManager': is not a class or namespace name
-  (compiling source file 'EmployeeManager.cpp')
-  
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\FilesHelper.h(101,30): error C2065: 'employeeList': undeclared identifier
-  (compiling source file 'EmployeeManager.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   
   FileManager.cpp
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
+  (compiling source file 'FileManager.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
+  (compiling source file 'FileManager.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
+  (compiling source file 'FileManager.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'FileManager.cpp')
   
@@ -50,6 +717,105 @@ D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_
   (compiling source file 'FileManager.cpp')
   
   FilesHelper.cpp
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
+  (compiling source file 'FilesHelper.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
+  (compiling source file 'FilesHelper.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
+  (compiling source file 'FilesHelper.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'FilesHelper.cpp')
   
@@ -58,30 +824,316 @@ D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_
   
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(45,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
   (compiling source file 'FilesHelper.cpp')
+  
+  Parser.cpp
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
+  (compiling source file 'Parser.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
+  (compiling source file 'Parser.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
+  (compiling source file 'Parser.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Parser.cpp')
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(27,19): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+  (compiling source file 'Parser.cpp')
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(45,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  (compiling source file 'Parser.cpp')
   
   Screens.cpp
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
   (compiling source file 'Screens.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
   
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(27,19): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
   (compiling source file 'Screens.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(45,15): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
   (compiling source file 'Screens.cpp')
-  
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\FilesHelper.h(101,13): error C2653: 'EmployeeManager': is not a class or namespace name
-  (compiling source file 'Screens.cpp')
-  
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\FilesHelper.h(101,30): error C2065: 'employeeList': undeclared identifier
-  (compiling source file 'Screens.cpp')
-  
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\FilesHelper.h(123,13): error C2653: 'AdminManager': is not a class or namespace name
-  (compiling source file 'Screens.cpp')
-  
-D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\FilesHelper.h(123,27): error C2065: 'adminList': undeclared identifier
-  (compiling source file 'Screens.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
   
   System_Bank_Visual.cpp
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20): error C2665: 'std::vector<Client,std::allocator<Client>>::push_back': no overloaded function could convert all the argument types
+  (compiling source file 'System_Bank_Visual.cpp')
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(870,23):
+      could be 'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(_Ty &&)': cannot convert argument 1 from 'Client *' to '_Ty &&'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to '_Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\vector(866,23):
+      or       'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)'
+          with
+          [
+              _Ty=Client
+          ]
+          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+          'void std::vector<Client,std::allocator<Client>>::push_back(const _Ty &)': cannot convert argument 1 from 'Client *' to 'const _Ty &'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              Reason: cannot convert from 'Client *' to 'const _Ty'
+          with
+          [
+              _Ty=Client
+          ]
+              D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+              'Client::Client': no overloaded function could convert all the argument types
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  could be 'Client::Client(Client &&)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(Client &&)': cannot convert argument 1 from 'Client *' to 'Client &&'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Client.h(76,1):
+                  or       'Client::Client(const Client &)'
+                      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                      'Client::Client(const Client &)': cannot convert argument 1 from 'Client *' to 'const Client &'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Reason: cannot convert from 'Client *' to 'const Client'
+                          D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                          Conversion requires a second user-defined-conversion operator or constructor
+                  D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,30):
+                  while trying to match the argument list '(Client *)'
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(58,20):
+      while trying to match the argument list '(Client *)'
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41): error C2440:         ]
+  (compiling source file 'System_Bank_Visual.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(62,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440: 'initializing': cannot convert from '_Ty' to 'Client *'
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         with
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         [
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:             _Ty=Client
+D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41): error C2440:         ]
+  (compiling source file 'System_Bank_Visual.cpp')
+      D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Employee.h(76,41):
+      No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  
 D:\Mohammed\Corses\Programming Learn\Route\Ahmed Abdo\System Bank Visual\System_Bank_Visual\System_Bank_Visual\Parser.h(21,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   (compiling source file 'System_Bank_Visual.cpp')
   
