@@ -1,5 +1,7 @@
 #pragma once
 #include "AdminManager.h"
+#include "FileManager.h"
+
 
 
 
@@ -16,107 +18,110 @@ public:
 
     static void welcome() {
         cout << "\t\t\t\t\tWelcome to Mohammed Bank!\n";
-        cout << "\t\t\t\t   Please choose an option to proceed.\n";
     }
 
     static void loginOptions() {
-        cout << "\t\t\t\t\t1 - Login as Client\n";
-        cout << "\t\t\t\t\t2 - Login as Employee\n";
-        cout << "\t\t\t\t\t3 - Login as Admin\n";
-        cout << "\t\t\t\t\t4 - Exit\n";
+        cout << "\t\t\t\t\t   Select login option:\n";
+        cout << "\t\t\t\t\t   1. Client\n";
+        cout << "\t\t\t\t\t   2. Employee\n";
+        cout << "\t\t\t\t\t   3. Admin\n";
+        cout << "\t\t\t\t\t   4. Exit\n";
     }
 
+    // d. static int loginAs()
     static int loginAs() {
-        int choice;
+        int option;
+        loginOptions();
         cout << "\t\t\t\t\tEnter your choice: ";
-        cin >> choice;
-        return choice;
-    }
-
-    static void invalid(int c) {
-        switch (c) {
-        case 1:
-            cout << "Invalid login attempt. Please try again.\n";
-            break;
-        case 2:
-            cout << "Invalid choice. Please enter a valid option.\n";
-            break;
-        default:
-            cout << "Unknown error occurred.\n";
-            break;
+        while (!(cin >> option) || option < 1 || option > 4) {
+            cout << "Invalid choice. Please enter a number between 1 and 4: ";
+            cin >> option;
+            cout << endl;
         }
+        return option;
     }
 
+    // e. static void invalid(int c)
+    static void invalid(int c) {
+        cout << "Invalid choice (" << c << "). Please try again.\n";
+    }
+
+    // f. static void logout()
     static void logout() {
-        cout << "You have been logged out successfully.\n";
+        cout << "Logging out... Goodbye!\n";
     }
 
+    // g. static void loginScreen(int c)
     static void loginScreen(int c) {
         int id;
         string password;
-
-        cout << "Enter ID: ";
-        cin >> id;
-        cout << "Enter Password: ";
-        cin >> password;
-
         switch (c) {
         case 1: {
+            cout << "Client Login:\n";
+            cout << "Enter Client ID: ";
+            cin >> id;
+            cout << "Enter Password: ";
+            cin >> password;
             Client* client = ClientManager::login(id, password);
             if (client) {
-                cout << "Client logged in successfully.\n";
+                ClientManager::clientOptions(client);
             }
             else {
-                cout << "Client login failed.\n";
+                invalid(c);
             }
-        
-             break;
+            break;
         }
         case 2: {
+            cout << "Employee Login:\n";
+            cout << "Enter Employee ID: ";
+            cin >> id;
+            cout << "Enter Password: ";
+            cin >> password;
             Employee* employee = EmployeeManager::login(id, password);
             if (employee) {
-                cout << "Employee logged in successfully.\n";
+                EmployeeManager::employeeOptions(employee);
             }
             else {
-                cout << "Employee login failed.\n";
+                invalid(c);
             }
             break;
         }
         case 3: {
+            cout << "Admin Login:\n";
+            cout << "Enter Admin ID: ";
+            cin >> id;
+            cout << "Enter Password: ";
+            cin >> password;
             Admin* admin = AdminManager::login(id, password);
             if (admin) {
-                cout << "Admin logged in successfully.\n";
+                AdminManager::adminOptions();
             }
             else {
-                cout << "Admin login failed.\n";
+                invalid(c);
             }
             break;
         }
+        case 4:
+            logout();
+            break;
         default:
-            cout << "Invalid option.\n";
+            invalid(c);
             break;
         }
     }
 
+    // h. static void runApp()
     static void runApp() {
-        bankName();
-        welcome();
+        FileManager* f = new FileManager();
+        f->getAllClients();
+        f->getAllEmployees();
+        f->getAllAdmins();
 
-        bool running = true;
-
-        while (running) {
-            loginOptions();
-            int choice = loginAs();
-
-            if (choice == 4) {
-                cout << "Exiting..." << endl;
-                running = false;
-            }
-            else {
-                loginScreen(choice);
-                logout();
-            }
-        }
+        int choice;
+        do {
+            welcome();
+            choice = loginAs();
+            loginScreen(choice);
+        } while (choice != 4);
     }
-
 };

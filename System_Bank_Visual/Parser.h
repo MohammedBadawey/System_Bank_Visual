@@ -1,9 +1,11 @@
 //Parser.h
 #pragma once
 #include <fstream>
+#include <vector>
 #include "Admin.h"
 
 using namespace std;
+
 
 class Parser
 {

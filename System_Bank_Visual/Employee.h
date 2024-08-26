@@ -2,6 +2,7 @@
 #include <vector>
 #include "Person.h"
 #include "Client.h"
+#include "GlobalVectors.h"
 
 
 using namespace std;
@@ -9,8 +10,6 @@ class Employee : public Person
 {
     // att
 protected:
-    static vector  <Client*>  clientList;
-    static vector <Employee*> employeeList;
     double salary;
     // con
 public:
@@ -46,6 +45,7 @@ public:
 
     void addClient(Client& client) {
         clientList.push_back(&client);
+        
     }
 
     Client* searchClient(int id) {

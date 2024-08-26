@@ -1,10 +1,12 @@
 #pragma once
 #include "ClientManager.h"
 #include "GlobalVectors.h"
+#include "FilesHelper.h"
+
 using namespace std;
 
 
-
+class FilesHelper;
 class EmployeeManager {
 public:
     
@@ -47,18 +49,18 @@ public:
             case 1: {
                 string name, password;
                 double balance;
-                int id;
+                int id = FilesHelper::getLast("lastClientId.txt")+1;
                 cout << "Enter client name: ";
                 cin >> name;
-                cout << "Enter client ID: ";
-                cin >> id;
                 cout << "Enter client password: ";
                 cin >> password;
                 cout << "Enter client balance: ";
                 cin >> balance;
                 Client* client = new Client(name, id, password, balance);
                 employee->addClient(*client);
+                FilesHelper::saveClient(client);
                 cout << "Client added successfully.\n";
+                client->Display();
                 delete client;
                 break;
             }

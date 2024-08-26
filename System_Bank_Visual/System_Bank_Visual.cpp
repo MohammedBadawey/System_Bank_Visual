@@ -10,14 +10,6 @@ int main()
 {
     Admin* admin = Admin::getInstance(); 
     FileManager f;
-    f.getAllClients();
-    f.getAllEmployees();
-    f.getAllAdmins();
-    Client c("aaaaaaaaaaaaa", 7, "aaaaaaaaaaaaaaa", 5000);
-    Employee e("ccccccccccccc", 1, "cccccccccccccc", 5000);
-    f.addClient(&c);
-    f.addEmployee(&e);
-    f.addAdmin(admin);
     Screens::runApp();
     return 0;
 

@@ -1,6 +1,5 @@
 #pragma once
 #include "Parser.h"
-#include "AdminManager.h"
 #include "GlobalVectors.h"
 
 
@@ -30,6 +29,7 @@ public:
 
         int id;
         ifs >> id;
+        ifs.close();
         return id;
     }
 
@@ -51,6 +51,8 @@ public:
         ofstream ofS("employeeData.txt", ios::app);
         if (ofS.is_open()) {
             ofS << e->getId() << "|" << e->getName() << "|" << e->getPassword() << "|" << e->getSalary() << endl;
+            ofS.close();
+            saveLast("lastEmployeeId.txt", e->getId());
         }
         else {
             cout << "Error opening employeeData.txt for writing!" << endl;
@@ -62,11 +64,13 @@ public:
         ofstream ofs("adminData.txt", ios::app);
         if (ofs.is_open()) {
             ofs << a->getId() << "|" << a->getName() << "|" << a->getPassword() << "|" << a->getSalary() << endl;
+            ofs.close();
+            saveLast("lastAdminId.txt", a->getId());
         }
         else {
             cout << "Error opening adminData.txt for writing!" << endl;
         }
-        saveLast("lastAdminId.txt", a->getId());
+        
 
     }
 
@@ -82,6 +86,8 @@ public:
             Client* c = new Client (Parser::parseToClient(line));
             clientList.push_back(c);
         }
+        ifs.close();
+
     }
 
     static void getEmployees() {
@@ -96,6 +102,7 @@ public:
             Employee* e = new Employee (Parser::parseToEmployee(line));
             employeeList.push_back(e);
         }
+        ifs.close();
     }
 
     static void getAdmins() {
@@ -118,6 +125,7 @@ public:
 
             adminList.push_back(admin);
         }
+        ifs.close();
     }
 
     static void clearFile(const string& fileName, const string& lastIdFile) {
