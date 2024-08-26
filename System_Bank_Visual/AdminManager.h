@@ -28,14 +28,22 @@ public:
 
     static Admin* login(int id, string password) {
         Admin* admin = Admin::getInstance();
-        if (admin->getPassword() == password) {
-            return admin;
+
+       
+        if (id != admin->getId()) 
+        {
+            cout << "Invalid ID.\n";
+            return nullptr;
         }
-        else {
+
+        if (admin->getPassword() != password) {
             cout << "Invalid password.\n";
             return nullptr;
         }
+
+        return admin;
     }
+
 
     static bool adminOptions() {
         int choice;
