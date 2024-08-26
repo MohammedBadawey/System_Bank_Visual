@@ -1,3 +1,4 @@
-#include "Employee.h"
-int Employee::newEmployeeId = 0;
+﻿#include "Employee.h"
+#include "FileManager.h"
 vector<Client*> Employee::clientList;
+vector<Employee*> Employee::employeeList;

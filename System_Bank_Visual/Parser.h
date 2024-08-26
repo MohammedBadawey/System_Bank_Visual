@@ -1,11 +1,6 @@
 //Parser.h
 #pragma once
-#include <iostream>
-#include <string>
-#include <vector>
 #include <fstream>
-#include "Client.h"
-#include "Employee.h"
 #include "Admin.h"
 
 using namespace std;

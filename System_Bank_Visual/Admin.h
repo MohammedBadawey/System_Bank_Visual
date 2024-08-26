@@ -1,9 +1,6 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <vector>
 #include "Employee.h"
-#include "Validation.h"
+
 using namespace std;
 
 
@@ -11,8 +8,7 @@ using namespace std;
 class Admin : public Employee
 {
 private:
-    vector<Client*> clientList;
-    vector<Employee*> employeeList;
+    
     static Admin* instance;
     Admin(string name, int id, string password, double salary)
         : Employee(name, id, password, salary) {}

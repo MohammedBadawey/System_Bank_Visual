@@ -1,19 +1,14 @@
 ﻿#pragma once
-#include <iostream>
-#include <string>
-#include <vector>
 #include "Admin.h"
-#include "Employee.h"
-#include "Client.h"
-#include "Validation.h"
 #include "EmployeeManager.h"
-#include "ClientManager.h"
+#include "GlobalVectors.h"
+
+
 
 using namespace std;
 
 class AdminManager {
 public:
-    static vector<Admin*> adminList;
 
     static void printAdminMenu() {
         cout << "\t\t\t\t\t   :: Admin Menu ::\n";

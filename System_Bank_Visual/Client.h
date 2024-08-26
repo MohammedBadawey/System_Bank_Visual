@@ -1,9 +1,6 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <cmath>
 #include "Person.h"
-#include "Validation.h"
+
 using namespace std;
 
 class Client : public Person
@@ -11,15 +8,13 @@ class Client : public Person
     // att
 private:
     double balance;
-    static int newClientId;
     // con
 public:
     Client()
     {
         balance = 0.0;
-        id = newClientId++;
     }
-    Client(string name, int id, string password, double balance) : Person(name, newClientId++, password)
+    Client(string name, int id, string password, double balance) : Person(name, id, password)
     {
         setBalance(balance);
     }
@@ -33,7 +28,6 @@ public:
     }
     // getter
     const double getBalance() { return balance; }
-    static int getNewClientId() { return newClientId; }
     // methods
 
     void deposit(double amount)

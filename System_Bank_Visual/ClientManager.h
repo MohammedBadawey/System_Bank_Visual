@@ -1,18 +1,15 @@
-﻿//ClientManager.h
-#pragma once
-#include <iostream>
-#include <vector>
-#include "Person.h"
-#include "Client.h"
+﻿#pragma once
 #include "Employee.h"
-#include "Validation.h"
+#include "GlobalVectors.h"
+
+
+
 
 using namespace std;
 
 
 class ClientManager  {
 public:
-    static vector <Client*> clientList;
     static int currentClientId;
 
 

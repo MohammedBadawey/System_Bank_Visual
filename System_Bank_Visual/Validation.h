@@ -2,9 +2,6 @@
 #include <iostream>
 #include <string>
 #include <cctype>
-#include <cmath>
-#include <exception>
-#include <stdexcept>
 using namespace std;
 
 class Validation

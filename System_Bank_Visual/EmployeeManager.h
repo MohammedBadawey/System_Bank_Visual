@@ -1,15 +1,12 @@
 #pragma once
-#include <iostream>
-#include <vector>
-#include "Employee.h"
 #include "ClientManager.h"
+#include "GlobalVectors.h"
 using namespace std;
 
 
 
 class EmployeeManager {
 public:
-    static vector <Employee*> employeeList;
     
     static void printEmployeeMenu() {
         cout << "\t\t\t\t\t   :: Employee Menu ::\n";

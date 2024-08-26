@@ -2,8 +2,8 @@
 #include <iostream>
 #include <string>
 #include "Validation.h"
-using namespace std;
 
+using namespace std;
 class Person
 {
 protected:

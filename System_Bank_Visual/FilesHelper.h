@@ -1,15 +1,7 @@
 #pragma once
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <vector>
-#include "Client.h"
-#include "Employee.h"
-#include "Admin.h"
 #include "Parser.h"
-#include "ClientManager.h"
-#include "EmployeeManager.h"
 #include "AdminManager.h"
+#include "GlobalVectors.h"
 
 
 using namespace std;
@@ -88,7 +80,7 @@ public:
         string line;
         while (getline(ifs, line)) {
             Client* c = new Client (Parser::parseToClient(line));
-            ClientManager::clientList.push_back(c);
+            clientList.push_back(c);
         }
     }
 
@@ -102,7 +94,7 @@ public:
         string line;
         while (getline(ifs, line)) {
             Employee* e = new Employee (Parser::parseToEmployee(line));
-            EmployeeManager::employeeList.push_back(e);
+            employeeList.push_back(e);
         }
     }
 
@@ -124,7 +116,7 @@ public:
             admin->setPassword(tempAdmin.getPassword());
             admin->setSalary(tempAdmin.getSalary());
 
-            AdminManager::adminList.push_back(admin);
+            adminList.push_back(admin);
         }
     }
 
@@ -135,7 +127,7 @@ public:
         }
         ofs.close();
 
-        saveLast(lastIdFile, -1);
+        saveLast(lastIdFile, 0);
     }
 
 };

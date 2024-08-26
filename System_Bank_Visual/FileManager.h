@@ -5,6 +5,7 @@ using namespace std;
 
 class FileManager : public DataSourceInterface {
 public:
+    FileManager() {};
     void addClient(Client* client)  {
         FilesHelper::saveClient(client);
     }

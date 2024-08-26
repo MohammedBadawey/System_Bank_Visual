@@ -1,33 +1,26 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <cmath>
 #include <vector>
 #include "Person.h"
-#include "Validation.h"
 #include "Client.h"
-using namespace std;
 
+
+using namespace std;
 class Employee : public Person
 {
-
     // att
 protected:
+    static vector  <Client*>  clientList;
+    static vector <Employee*> employeeList;
     double salary;
-    static int newEmployeeId;
-    static vector<Client> clientList;
-
     // con
 public:
     Employee()
     {
         salary = 0.0;
-        id = newEmployeeId++;
     }
-    Employee(string name, int id, string password, double salary) :Person(name, newEmployeeId++, password)
+    Employee(string name, int id, string password, double salary) :Person(name, id, password)
     {
         setSalary(salary);
-
     }
     //setter
     void setSalary(double salary)
@@ -37,15 +30,12 @@ public:
         }
         this->salary = salary;
     }
-    
+
     // getter
     double getSalary()
     {
         return salary;
     }
-
-    static int getNewEmployeeId() {
-        return newEmployeeId; }
 
     // methods
     const void Display()

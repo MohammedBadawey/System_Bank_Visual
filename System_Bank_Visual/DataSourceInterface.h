@@ -1,13 +1,12 @@
 #pragma once
-#include <iostream>
-#include <string>
-#include <cmath>
-#include <vector>
-#include "Person.h"
-#include "Client.h"
-#include "Employee.h"
-#include "Admin.h"
+
 using namespace std;
+
+
+class Client;   // Forward declaration
+class Employee; // Forward declaration
+class Admin;    // Forward declaration
+
 class DataSourceInterface {
 public:
     virtual void addClient(Client* client) = 0;
