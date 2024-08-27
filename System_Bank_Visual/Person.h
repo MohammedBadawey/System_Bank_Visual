@@ -41,6 +41,12 @@ public:
         }
         this->password = password;
     }
+
+    void setPerson(string name, int id, string password){
+        setName(name);
+        setId(id);
+        setPassword(password);
+    }
     //getter
     const string getName()const
     {
@@ -58,8 +64,13 @@ public:
     //method
     const void Display()
     {
-        cout << "Name -> " << name << endl;
         cout << "Id -> " << id << endl;
+        cout << "Name -> " << name << endl;
+        //cout << "Password -> " << password << endl;
+    }
+
+    ~Person(){
+
     }
 };
 

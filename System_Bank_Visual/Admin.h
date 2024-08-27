@@ -21,6 +21,7 @@ public:
         {
             instance = new Admin(name, id, password, salary);
         }
+        adminList.push_back(instance);
         return instance;
 
     }

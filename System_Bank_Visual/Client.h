@@ -65,7 +65,7 @@ public:
     const void Display()
     {
         Person::Display();
-        cout << "balance-> " << balance << endl;
+        cout << "balance -> " << balance << endl;
     }
 };
 
