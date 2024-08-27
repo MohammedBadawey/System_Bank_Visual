@@ -41,7 +41,7 @@ public:
     {
         Person::Display();
         cout << "Salary -> " << salary << endl;
-    }
+    } //
 
     void addClient(Client& client) {
         clientList.push_back(&client);
