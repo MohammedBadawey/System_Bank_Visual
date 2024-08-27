@@ -25,49 +25,6 @@ public:
 
     }
 
-    /*const void Display()
-    {
-        Employee::Display();
-    }*/
-
-    //void addClient(Client& client) {
-    //    clientList.push_back(&client);
-    //}
-
-    /*Client* searchClient(int id) {
-        for (Client* client : clientList) {
-            if (client->getId() == id) {
-                return client;
-            }
-        }
-        return nullptr;
-    }*/
-
-    /*void listClient() const {
-        if (clientList.empty()) {
-            cout << "No clients available." << endl;
-            return;
-        }
-
-        for (Client* client : clientList) {
-            client->Display();
-            cout << "------" << endl;
-        }
-    }*/
-
-    /*void editClient(int id, string name, string password, double balance) {
-        Client* client = searchClient(id);
-        if (client) {
-            client->setName(name);
-            client->setPassword(password);
-            client->setBalance(balance);
-            cout << "Client updated successfully." << endl;
-        }
-        else {
-            cout << "Client not found." << endl;
-        }
-    }*/
-
     void addEmployee(Employee& employee) {
         employeeList.push_back(&employee);
     }
