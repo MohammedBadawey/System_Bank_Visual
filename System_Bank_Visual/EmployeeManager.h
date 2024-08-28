@@ -47,7 +47,8 @@ public:
             switch (choice) {
                 //Add new client
             case 1: {
-                string name, password;
+                Person* p;
+                /*string name, password;
                 double balance;
                 int id = FilesHelper::getLast("lastClientId.txt")+1;
                 cout << "Enter client name: ";
@@ -62,7 +63,7 @@ public:
                 cout << "Client added successfully.\n";
                 client->Display();
                 delete client;
-                break;
+                break;*/
             }
 
                //List all clients
