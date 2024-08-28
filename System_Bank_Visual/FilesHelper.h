@@ -152,5 +152,99 @@ public:
         saveLast(lastIdFile, 0);
         delete ofs;
     }
+    //=======================================================
+    //احنا ممكن بدلا من استخدام دوال التعديل بهذه الطريقة، نعدل من خلال ربط الفيكتور بالملفات ؟
 
+    static void updateClientFile(Client* c) {
+        ifstream* ifs = new ifstream("clientData.txt");
+        ofstream* ofs = new ofstream("tempClientData.txt");
+
+        if (!ifs->is_open() || !ofs->is_open()) {
+            cout << "Error opening file for updating!" << endl;
+            delete ifs;
+            delete ofs;
+            return;
+        }
+
+        string line;
+        while (getline(*ifs, line)) {
+            Client temp = Parser::parseToClient(line);
+            if (temp.getId() == c->getId()) {
+                *ofs << c->getId() << "|" << c->getName() << "|" << c->getPassword() << "|" << c->getBalance() << endl;
+            }
+            else {
+                *ofs << line << endl;
+            }
+        }
+
+        ifs->close();
+        ofs->close();
+        delete ifs;
+        delete ofs;
+
+        remove("clientData.txt");
+        rename("tempClientData.txt", "clientData.txt");
+    }
+   
+    static void updateEmployeeFile(Employee* e) {
+        ifstream* ifs = new ifstream("employeeData.txt");
+        ofstream* ofs = new ofstream("tempEmployeeData.txt");
+
+        if (!ifs->is_open() || !ofs->is_open()) {
+            cout << "Error opening file for updating!" << endl;
+            delete ifs;
+            delete ofs;
+            return;
+        }
+
+        string line;
+        while (getline(*ifs, line)) {
+            Employee temp = Parser::parseToEmployee(line);
+            if (temp.getId() == e->getId()) {
+                *ofs << e->getId() << "|" << e->getName() << "|" << e->getPassword() << "|" << e->getSalary() << endl;
+            }
+            else {
+                *ofs << line << endl;
+            }
+        }
+
+        ifs->close();
+        ofs->close();
+        delete ifs;
+        delete ofs;
+
+        remove("employeeData.txt");
+        rename("tempEmployeeData.txt", "employeeData.txt");
+    }
+
+    static void updateAdminFile(Admin* a) {
+        ifstream* ifs = new ifstream("adminData.txt");
+        ofstream* ofs = new ofstream("tempAdminData.txt");
+
+        if (!ifs->is_open() || !ofs->is_open()) {
+            cout << "Error opening file for updating!" << endl;
+            delete ifs;
+            delete ofs;
+            return;
+        }
+
+        string line;
+        while (getline(*ifs, line)) {
+            Admin temp = *Parser::parseToAdmin(line); // لأن الـ Admin يستخدم Singleton
+            if (temp.getId() == a->getId()) {
+                *ofs << a->getId() << "|" << a->getName() << "|" << a->getPassword() << "|" << a->getSalary() << endl;
+            }
+            else {
+                *ofs << line << endl;
+            }
+        }
+
+        ifs->close();
+        ofs->close();
+        delete ifs;
+        delete ofs;
+
+        remove("adminData.txt");
+        rename("tempAdminData.txt", "adminData.txt");
+    }
 };

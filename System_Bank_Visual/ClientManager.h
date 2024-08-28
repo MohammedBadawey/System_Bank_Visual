@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include "Employee.h"
+#include "FilesHelper.h"
+
 
 
 
@@ -128,6 +130,7 @@ public:
                 }
                 else {
                     cout << "Recipient not found. Please try again.\n";
+                    //return;
                 }
             }
         } while (attempts < 3 && !validRecipient);
@@ -168,6 +171,8 @@ public:
         else {
             cout << "Transfer canceled.\n";
         }
+        FilesHelper::updateClientFile(searchClientById(currentClientId));
+        FilesHelper::updateClientFile(searchClientById(recipientId));
     }
 
     static void depositClient() {
@@ -182,6 +187,7 @@ public:
         else {
             cout << "Invalid deposit amount.\n";
         }
+        FilesHelper::updateClientFile(searchClientById(currentClientId));
     }
 
     static void withdrawClient() {
@@ -196,6 +202,7 @@ public:
         else {
             cout << "Insufficient balance or invalid amount.\n";
         }
+        FilesHelper::updateClientFile(searchClientById(currentClientId));
     }
 
     static Client* searchClientById(int id) {
@@ -208,4 +215,4 @@ public:
         }
     }
 };
-
+//// Do not forget updatePassword

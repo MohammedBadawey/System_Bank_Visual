@@ -5,20 +5,22 @@
 #include "GlobalVectors.h"
 
 
+
 using namespace std;
 class Employee : public Person
 {
     // att
 protected:
-    double salary;
+    double* salary;
     // con
 public:
     Employee()
     {
-        salary = 0.0;
+        salary = new double(0.0);
     }
     Employee(string name, int id, string password, double salary) :Person(name, id, password)
     {
+        this->salary = new double();
         setSalary(salary);
     }
     //setter
@@ -27,20 +29,20 @@ public:
         while (!Validation::checkSalary(salary)) {
             cin >> salary;
         }
-        this->salary = salary;
+        *(this->salary) = salary;
     }
 
     // getter
     double getSalary()
     {
-        return salary;
+        return *salary;
     }
 
     // methods
     const void Display()
     {
         Person::Display();
-        cout << "Salary -> " << salary << endl;
+        cout << "Salary -> " << *salary << endl;
     } //
 
     void addClient(Client& client) {
@@ -80,6 +82,10 @@ public:
         else {
             cout << "Client not found." << endl;
         }
+    }
+
+    ~Employee() {
+        delete salary;
     }
 };
 

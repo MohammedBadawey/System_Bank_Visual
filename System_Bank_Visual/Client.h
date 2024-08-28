@@ -1,21 +1,24 @@
 #pragma once
 #include "Person.h"
 
+
 using namespace std;
 
 class Client : public Person
 {
     // att
 private:
-    double balance;
+    double* balance;
     // con
 public:
     Client()
     {
-        balance = 0.0;
+        balance = new double(0.0);
     }
     Client(string name, int id, string password, double balance) : Person(name, id, password)
     {
+
+        this->balance = new double();
         setBalance(balance);
     }
 
@@ -24,22 +27,21 @@ public:
         while (!Validation::checkBalance(balance)) {
             cin >> balance;
         }
-        this->balance = balance;
+        *(this->balance) = balance;
     }
     // getter
-    const double getBalance() { return balance; }
+    const double getBalance() { return *balance; }
     // methods
 
     void deposit(double amount)
     {
-        balance += amount;
+        *balance += amount;
     }
 
     void withdraw(double amount)
     {
-        if (amount <= balance)
-        {
-            balance -= amount;
+        if (amount <= *balance) {
+            *balance -= amount;
         }
         else
         {
@@ -48,9 +50,8 @@ public:
     }
     void transferTo(double amount, Client& recipient)
     {
-        if (amount <= balance)
-        {
-            balance -= amount;
+        if (amount <= *balance) {
+            *balance -= amount;
             recipient.deposit(amount);
         }
         else
@@ -60,12 +61,16 @@ public:
     }
     const void checkBalance()
     {
-        cout << "your balance is -> " << balance << endl;
+        cout << "Your balance is -> " << *balance << endl;
     }
     const void Display()
     {
         Person::Display();
-        cout << "balance -> " << balance << endl;
+        cout << "balance -> " << *balance << endl;
+    }
+
+    ~Client() {
+        delete balance;
     }
 };
 

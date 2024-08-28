@@ -108,6 +108,7 @@ public:
                 double balance;
                 cout << "Enter client ID to edit: ";
                 cin >> id;
+                Client* client = admin->searchClient(id);
                 cout << "Enter new client name: ";
                 cin >> name;
                 cout << "Enter new client password: ";
@@ -115,6 +116,7 @@ public:
                 cout << "Enter new balance: ";
                 cin >> balance;
                 admin->editClient(id, name, password, balance);
+                FilesHelper::updateClientFile(client);
                 break;
             }
 
@@ -125,6 +127,7 @@ public:
                 double salary;
                 cout << "Enter employee ID to edit: ";
                 cin >> id;
+                Employee* employee = admin->searchEmployee(id);
                 cout << "Enter new employee name: ";
                 cin >> name;
                 cout << "Enter new employee password: ";
@@ -132,6 +135,8 @@ public:
                 cout << "Enter new employee salary: ";
                 cin >> salary;
                 admin->editEmployee(id, name, password, salary);
+                FilesHelper::updateEmployeeFile(employee);
+
                 break;
             }
 

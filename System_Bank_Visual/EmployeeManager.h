@@ -1,7 +1,6 @@
 #pragma once
 #include "ClientManager.h"
 #include "GlobalVectors.h"
-#include "FilesHelper.h"
 
 using namespace std;
 
@@ -46,6 +45,7 @@ public:
             cin >> choice;
 
             switch (choice) {
+                //Add new client
             case 1: {
                 string name, password;
                 double balance;
@@ -65,11 +65,12 @@ public:
                 break;
             }
 
+               //List all clients
             case 2:{
                 employee->listClient();
                 break;
             }
-            
+                //Search all clients
             case 3: {
                 int id;
                 cout << "Enter client ID to search: ";
@@ -83,13 +84,14 @@ public:
                 }
                 break;
             }
-            
+                 //Edit client information
             case 4: {
                 int id;
                 string name, password;
                 double balance;
                 cout << "Enter client ID to edit: ";
                 cin >> id;
+                Client* client = employee->searchClient(id);
                 cout << "Enter new client name: ";
                 cin >> name;
                 cout << "Enter new client password: ";
@@ -97,8 +99,8 @@ public:
                 cout << "Enter new balance: ";
                 cin >> balance;
                 employee->editClient(id, name, password, balance);
+                FilesHelper::updateClientFile(client);
                 break;
-
             }
                 
             case 5: {
