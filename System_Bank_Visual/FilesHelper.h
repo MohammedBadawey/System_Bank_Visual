@@ -153,8 +153,6 @@ public:
         delete ofs;
     }
     //=======================================================
-    //احنا ممكن بدلا من استخدام دوال التعديل بهذه الطريقة، نعدل من خلال ربط الفيكتور بالملفات ؟
-
     static void updateClientFile(Client* c) {
         ifstream* ifs = new ifstream("clientData.txt");
         ofstream* ofs = new ofstream("tempClientData.txt");

@@ -9,23 +9,17 @@ class Person
 {
 protected:
     // att
-    string* name;
-    int* id;
-    string* password;
+    string name;
+    int id;
+    string password;
 public:
     // cons
     Person()
     {
-        name = new string();
-        id = new int(0);
-        password = new string();
+        id = 0;
     }
     Person(string name, int id, string password)
     {
-        this->id = new int(id);
-        this->name = new string(name);
-        this->password = new string(password);
-
         setName(name);
         setId(id);
         setPassword(password);
@@ -35,46 +29,44 @@ public:
         while (!Validation::checkName(name)) {
             getline(cin, name);
         }
-        *(this->name) = name;
+        this->name = name;
     }
 
     void setId(int id) {
-        *(this->id) = id;
+        this->id = id;
     }
 
     void setPassword(string password) {
         while (!Validation::checkPassword(password)) {
             cin >> password;
         }
-        *(this->password) = password;
+        this->password = password;
     }
 
     //getter
     const string getName()const
     {
-        return *name;
+        return name;
     }
     const int getId()
     {
-        return *id;
+        return id;
     }
     const string getPassword()const
     {
-        return *password;
+        return password;
     }
 
     //method
     const void Display()
     {
-        cout << "Id -> " << *id << endl;
-        cout << "Name -> " << *name << endl;
+        cout << "Id -> " << id << endl;
+        cout << "Name -> " << name << endl;
         //cout << "Password -> " << password << endl;
     }
 
     ~Person(){
-        delete id;
-        delete name;
-        delete password;
+
     }
 };
 
